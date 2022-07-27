@@ -1,5 +1,4 @@
 # MetaCTF CyberGames 2021
-MetaCTF 2021 - CTF Writeup<br>
 66 challenges
 
 ### Binary Exploitation - 13 challenges
