@@ -1,11 +1,11 @@
-# Other
-[Flag Format (50 pts)]() *no soln*<br>
-[Interception I (100 pts)]() *no soln*<br>
-[This Ain't a Scene, It's an Encryption Race (100 pts)]() *no soln*<br>
-[Interception II (150 pts)]() *no soln*<br>
-[MetaCTF CyberGames 2021 Feedback (200 pts)]() *no soln*<br>
-[Interception III (275 pts)]() *no soln*<br>
-[Step into the NET (600 pts)]() *no soln*<br>
+# Other - 7 challenges
+[Flag Format (50 pts)](#flag-format-50-pts) *no soln*<br>
+[Interception I (100 pts)](#interception-i-100-pts) *no soln*<br>
+[This Ain't a Scene, It's an Encryption Race (100 pts)](#this-aint-a-scene-its-an-encryption-race-100-pts) *no soln*<br>
+[Interception II (150 pts)](#interception-ii-150-pts) *no soln*<br>
+[MetaCTF CyberGames 2021 Feedback (200 pts)](#metactf-cybergames-2021-feedback-200-pts) *no soln*<br>
+[Interception III (275 pts)](#interception-iii-275-pts) *no soln*<br>
+[Step into the NET (600 pts)](#step-into-the-net-600-pts) *no soln*<br>
 
 ## Flag Format (50 pts)
 > Most of our flags are formatted like this: MetaCTF{string_separated_with_und3rscores}

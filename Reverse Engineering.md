@@ -1,10 +1,10 @@
-# Reverse Engineering
-[There Are No Strings on Me (100 pts)]() *no soln*<br>
-[I Hate Python (250 pts)]() *no soln*<br>
-[Far From The Weakest Shell (275 pts)]() *no soln*<br>
-[Source Code Shipping (275 pts)]() *no soln*<br>
-[Revvy Chevy (300 pts)]() *no soln*<br>
-[Getting Darryl Back (350 pts)]() *no soln*<br>
+# Reverse Engineering - 6 challenges
+[There Are No Strings on Me (100 pts)](#there-are-no-strings-on-me-100-pts) *no soln*<br>
+[I Hate Python (250 pts)](#i-hate-python-250-pts) *no soln*<br>
+[Far From The Weakest Shell (275 pts)](#far-from-the-weakest-shell-275-pts) *no soln*<br>
+[Source Code Shipping (275 pts)](#source-code-shipping-275-pts) *no soln*<br>
+[Revvy Chevy (300 pts)](#revvy-chevy-300-pts) *no soln*<br>
+[Getting Darryl Back (350 pts)](#getting-darryl-back-350-pts) *no soln*<br>
 
 ## There Are No Strings on Me (100 pts)
 > We've got this program that's supposed to check a password, and we're not quite sure how it works. Could you take a look at it and see about finding the password it's looking for?

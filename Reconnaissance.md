@@ -1,16 +1,16 @@
-# Reconnaissance
-[Sugar, We're Goin Up (125 pts)]() *no soln*<br>
-[The Best Laid Plans... (200 pts)]() *no soln*<br>
-[Who Broke the Printer This Time? (200 pts)]() *no soln*<br>
-[Who owns the cloud? (225 pts)]() *no soln*<br>
-[I want my files back! (275 pts)]() *no soln*<br>
-[The Searcher (275 pts)]() *no soln*<br>
-[Where in the World? (325 pts)]() *no soln*<br>
-[Mystery C2 Server (350 pts)]() *no soln*<br>
-[Where's Vedder? (525 pts)]() *no soln*<br>
-[Online Presence (550 pts)]() *no soln*<br>
-[They call me TracerT (550 pts)]() *no soln*<br>
-[New Spot (600 pts)]() *no soln*<br>
+# Reconnaissance - 12 challenges
+[Sugar, We're Goin Up (125 pts)](#sugar-were-goin-up-125-pts) *no soln*<br>
+[The Best Laid Plans... (200 pts)](#the-best-laid-plans-200-pts) *no soln*<br>
+[Who Broke the Printer This Time? (200 pts)](#who-broke-the-printer-this-time-200-pts) *no soln*<br>
+[Who owns the cloud? (225 pts)](#who-owns-the-cloud-225-pts) *no soln*<br>
+[I want my files back! (275 pts)](#i-want-my-files-back-275-pts) *no soln*<br>
+[The Searcher (275 pts)](#the-searcher-275-pts) *no soln*<br>
+[Where in the World? (325 pts)](#where-in-the-world-325-pts) *no soln*<br>
+[Mystery C2 Server (350 pts)](#mystery-c2-server-350-pts) *no soln*<br>
+[Where's Vedder? (525 pts)](#wheres-vedder-525-pts) *no soln*<br>
+[Online Presence (550 pts)](#online-presence-550-pts) *no soln*<br>
+[They call me TracerT (550 pts)](#they-call-me-tracert-550-pts) *no soln*<br>
+[New Spot (600 pts)](#new-spot-600-pts) *no soln*<br>
 
 ## Sugar, We're Goin Up (125 pts)
 > In September 2021, GitLab upgraded the CVSSv3 score for a critical remote code execution vulnerability to 10.0, the highest possible score. Although a patch was released in April, numerous public-facing, unpatched GitLab instances remain vulnerable.

@@ -1,14 +1,14 @@
-# Cryptography
-[A to Z (100 pts)]() *no soln*<br>
-[Thnks fr th Pwds (100 pts)]() *no soln*<br>
-[Wrong Way on a One Way Street (100 pts)]() *no soln*<br>
-[Unbreakable Encryption (150 pts)]() *no soln*<br>
-[Size Matters (175 pts)]() *no soln*<br>
-[Company Picnic (225 pts)]() *no soln*<br>
-[Ransomware Patch (250 pts)]() *no soln*<br>
-[Sugar, Spice, and Sweet1986Spice (425 pts)]() *no soln*<br>
-[Two Key Crypto (525 pts)]() *no soln*<br>
-[Hide and Seek the Flag (700 pts)]() *no soln*<br>
+# Cryptography - 10 challenges
+[A to Z (100 pts)](#a-to-z-100-pts) *no soln*<br>
+[Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts) *no soln*<br>
+[Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts) *no soln*<br>
+[Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts) *no soln*<br>
+[Size Matters (175 pts)](#size-matters-175-pts) *no soln*<br>
+[Company Picnic (225 pts)](#company-picnic-225-pts) *no soln*<br>
+[Ransomware Patch (250 pts)](#ransomware-patch-250-pts) *no soln*<br>
+[Sugar, Spice, and Sweet1986Spice (425 pts)](#sugar-spice-and-sweet1986spice-425-pts) *no soln*<br>
+[Two Key Crypto (525 pts)](#two-key-crypto-525-pts) *no soln*<br>
+[Hide and Seek the Flag (700 pts)](#hide-and-seek-the-flag-700-pts) *no soln*<br>
 
 ## A to Z (100 pts)
 > This encrypted flag will only require a simple substitution cipher to solve. Rearrange the letters from A to Z.

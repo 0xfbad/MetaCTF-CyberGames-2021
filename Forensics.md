@@ -1,13 +1,13 @@
-# Forensics
-[Magic in the Hex (100 pts)]() *no soln*<br>
-[My Logs Know What You Did (125 pts)]() *no soln*<br>
-[I Just Wanna Run (150 pts)]() *no soln*<br>
-[Sharing Files and Passwords (150 pts)]() *no soln*<br>
-[Still Believe in Magic? (150 pts)]() *no soln*<br>
-[Et tu, Hacker? (200 pts)]() *no soln*<br>
-[Easy as it (TCP) Streams (250 pts)]() *no soln*<br>
-[Pattern of Life (275 pts)]() *no soln*<br>
-[The Carver (475 pts)]() *no soln*<br>
+# Forensics - 9 challenges
+[Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts) *no soln*<br>
+[My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts) *no soln*<br>
+[I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts) *no soln*<br>
+[Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts) *no soln*<br>
+[Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts) *no soln*<br>
+[Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts) *no soln*<br>
+[Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts) *no soln*<br>
+[Pattern of Life (275 pts)](#pattern-of-life-275-pts) *no soln*<br>
+[The Carver (475 pts)](#the-carver-475-pts) *no soln*<br>
 
 ## Magic in the Hex (100 pts)
 > Sometimes in forensics, we run into files that have odd or unknown file extensions. In these cases, it's helpful to look at some of the file format signatures to figure out what they are. We use something called "magic bytes" which are the first few bytes of a file.
