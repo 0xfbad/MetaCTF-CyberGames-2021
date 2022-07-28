@@ -1,5 +1,5 @@
 # Other - 7 challenges
-[Flag Format (50 pts)](#flag-format-50-pts) *no soln*<br>
+[Flag Format (50 pts)](#flag-format-50-pts)<br>
 [Interception I (100 pts)](#interception-i-100-pts) *no soln*<br>
 [This Ain't a Scene, It's an Encryption Race (100 pts)](#this-aint-a-scene-its-an-encryption-race-100-pts) *no soln*<br>
 [Interception II (150 pts)](#interception-ii-150-pts) *no soln*<br>
@@ -12,11 +12,13 @@
 >
 > If the flag is not in that format, we specify what the flag format should be instead. If you solve this challenge, make sure to tell your teammates about the flag format!
 
+Self explanatory.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{string_separated_with_und3rscores}
 ```
 [return to top](#top)</div>
 
