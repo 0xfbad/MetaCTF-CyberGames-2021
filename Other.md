@@ -1,7 +1,7 @@
 # Other - 7 challenges
 [Flag Format (50 pts)](#flag-format-50-pts)<br>
 [Interception I (100 pts)](#interception-i-100-pts) *no soln*<br>
-[This Ain't a Scene, It's an Encryption Race (100 pts)](#this-aint-a-scene-its-an-encryption-race-100-pts) *no soln*<br>
+[This Ain't a Scene, It's an Encryption Race (100 pts)](#this-aint-a-scene-its-an-encryption-race-100-pts)<br>
 [Interception II (150 pts)](#interception-ii-150-pts) *no soln*<br>
 [MetaCTF CyberGames 2021 Feedback (200 pts)](#metactf-cybergames-2021-feedback-200-pts) *no soln*<br>
 [Interception III (275 pts)](#interception-iii-275-pts) *no soln*<br>
@@ -46,11 +46,15 @@ NOT SOLVED YET
 > 
 > The flag format will be `T####`.
 
+Searching online forthe MITRE ATT&CK database, I found the following:
+
+![MITRE ATT&CK database](https://i.imgur.com/ILNi6VS.png)
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+T1486
 ```
 [return to top](#top)</div>
 
