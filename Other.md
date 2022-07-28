@@ -3,7 +3,7 @@
 [Interception I (100 pts)](#interception-i-100-pts) *no soln*<br>
 [This Ain't a Scene, It's an Encryption Race (100 pts)](#this-aint-a-scene-its-an-encryption-race-100-pts)<br>
 [Interception II (150 pts)](#interception-ii-150-pts) *no soln*<br>
-[MetaCTF CyberGames 2021 Feedback (200 pts)](#metactf-cybergames-2021-feedback-200-pts) *no soln*<br>
+[MetaCTF CyberGames 2021 Feedback (200 pts)](#metactf-cybergames-2021-feedback-200-pts)<br>
 [Interception III (275 pts)](#interception-iii-275-pts) *no soln*<br>
 [Step into the NET (600 pts)](#step-into-the-net-600-pts) *no soln*<br>
 
@@ -77,11 +77,13 @@ NOT SOLVED YET
 >
 > Please ask everyone on your team to submit it.
 
+Filling out the feedback form, we get the flag.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{thanks_for_hacking_with_us_this_weekend}
 ```
 [return to top](#top)</div>
 
