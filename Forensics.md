@@ -4,7 +4,7 @@
 [I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts)<br>
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts)<br>
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts)<br>
-[Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts) *no soln*<br>
+[Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts)<br>
 [Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts) *no soln*<br>
 [Pattern of Life (275 pts)](#pattern-of-life-275-pts) *no soln*<br>
 [The Carver (475 pts)](#the-carver-475-pts) *no soln*<br>
@@ -215,11 +215,27 @@ MetaCTF{was_it_a_magic_trick_or_magic_bytes?}
 ## Et tu, Hacker? (200 pts)
 > The law firm of William, Ian, Laura, and Lenny (WILL for short) has just been the victim of an attempted cyber attack. Someone tried to brute force the login for one of their employees. They have the [event logs](https://metaproblems.com/aa50297520b4159c83a31f5fe8f9cdeb/bruteforce.evtx) of the incident, and were wondering if you could tell them which user was targeted. Flag is in the form of MetaCTF{}.
 
+Looks like we were given a `.evtx` file, which is a Microsoft Event Log file. We can easily open this in Windows Event Viewer:
+
+![evtx](https://i.imgur.com/Ksw0l5O.png)
+
+Now, we need to look for some suspicious activity, specifically logon attempts as the problem told us someone was trying to brute force login. With this knowledge lets look for repeated logon attempts.
+
+Doing this I found a block of login attempts (note the time between each login attempt):
+
+![evtx](https://i.imgur.com/jQ422bE.png)
+
+Looking in the details section of the event we see that a login was attempted for the user `ericm`.
+
+![evtx](https://i.imgur.com/HMdmayO.png)
+
+Pretty much all the logs in this area are attempts to login into the account `ericm`. This must be the account that was targeted.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{ericm}
 ```
 [return to top](#top)</div>
 
