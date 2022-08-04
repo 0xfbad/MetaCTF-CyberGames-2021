@@ -3,7 +3,7 @@
 [My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts)<br>
 [I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts)<br>
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts)<br>
-[Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts) *no soln*<br>
+[Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts)<br>
 [Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts) *no soln*<br>
 [Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts) *no soln*<br>
 [Pattern of Life (275 pts)](#pattern-of-life-275-pts) *no soln*<br>
@@ -172,11 +172,42 @@ ftp_is_better_than_dropbox
 ## Still Believe in Magic? (150 pts)
 > We found [an archive with a file in it](https://metaproblems.com/f03e38955de03e3d860d32dfd20b132f/magic.tar.gz), but there was no file extension so we're not sure what it is. Can you figure out what kind of file it is and then open it?
 
+Download the file and unzip it:
+
+```
+$ tar -xvzf magic.tar.gz
+magic
+```
+
+We got a file called `magic`, lets run a file check on it:
+
+```
+$ file magic
+magic: Zip archive data, at least v2.0 to extract, compression method=deflate
+```
+
+Seems easy enough, lets unzip it again
+
+```
+$ unzip magic
+Archive:  magic
+  inflating: magic.txt
+   creating: __MACOSX/
+  inflating: __MACOSX/._magic.txt
+```
+
+Lets check out the `magic.txt` file:
+
+```
+$ cat magic.txt
+MetaCTF{was_it_a_magic_trick_or_magic_bytes?}
+```
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{was_it_a_magic_trick_or_magic_bytes?}
 ```
 [return to top](#top)</div>
 
