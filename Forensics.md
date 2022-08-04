@@ -2,7 +2,7 @@
 [Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts)<br>
 [My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts)<br>
 [I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts)<br>
-[Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts) *no soln*<br>
+[Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts)<br>
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts) *no soln*<br>
 [Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts) *no soln*<br>
 [Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts) *no soln*<br>
@@ -142,11 +142,29 @@ METAL\timq-admin
 ## Sharing Files and Passwords (150 pts)
 > FTP servers are made to share files, but if its communications are not encrypted, it might be sharing passwords as well. The password in [this pcap](https://metaproblems.com/2dd6443361555f266a8c2f54c50d01e9/ftp_challenge.pcapng) to get the flag
 
+Given a pcap file, we can see the following:
+
+![pcap](https://i.imgur.com/FBP2T5b.png)
+
+We're given a hint about FTP connections. So lets sort by FTP:
+
+![pcap](https://i.imgur.com/xIB0Vj6.png)
+
+As we know FTP traffic is in plaintext, and here we can see that someone was trying to login, lets examine those packets:
+
+![pcap](https://i.imgur.com/d8SA6y5.png)
+
+And it looks like we found the exchange between the user signing in and the server:
+
+![pcap](https://i.imgur.com/z07QSCW.png)
+
+You can see the password on the 4th line.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+ftp_is_better_than_dropbox
 ```
 [return to top](#top)</div>
 
