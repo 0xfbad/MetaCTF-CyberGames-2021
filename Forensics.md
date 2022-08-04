@@ -1,5 +1,5 @@
 # Forensics - 9 challenges
-[Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts) *no soln*<br>
+[Magic in the Hex (100 pts)](#magic-in-the-hex-100-pts)<br>
 [My Logs Know What You Did (125 pts)](#my-logs-know-what-you-did-125-pts) *no soln*<br>
 [I Just Wanna Run (150 pts)](#i-just-wanna-run-150-pts) *no soln*<br>
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts) *no soln*<br>
@@ -14,11 +14,33 @@
 > 
 > What is the ASCII representation of the magic bytes for a VMDK file? The flag format will be 3-4 letters (there are two correct answers).
 
+Every file has a file header which tells the operating system what type of file it is. The file header is the first few bytes of the file, for example a GIF file:
+
+```
+$ file cat_hop.gif
+cat_hop.gif: GIF image data, version 89a, 128 x 128
+
+$ xxd cat_hop.gif
+00000000: 4749 4638 3961 8000 8000 f700 0000 0000  GIF89a..........
+```
+
+Here we can see that the file header for GIF files is `GIF89a` and the magic bytes are `47 49 46 38 39 61`.
+
+As we can see this [wikipedia page](https://en.wikipedia.org/wiki/List_of_file_signatures) tells us the same exact thing:
+
+![Wikipedia page](https://i.imgur.com/7YmV7Kp.png)
+
+We can then look for VMDK on the same page:
+
+![Wikipedia page](https://i.imgur.com/0S2eGFp.png)
+
+The magic bytes for VMDK are `4B 44 4D` or in ascii `KDM`.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+KDM
 ```
 [return to top](#top)</div>
 
