@@ -5,7 +5,7 @@
 [Sharing Files and Passwords (150 pts)](#sharing-files-and-passwords-150-pts)<br>
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts)<br>
 [Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts)<br>
-[Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts) *no soln*<br>
+[Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts)<br>
 [Pattern of Life (275 pts)](#pattern-of-life-275-pts) *no soln*<br>
 [The Carver (475 pts)](#the-carver-475-pts) *no soln*<br>
 
@@ -241,13 +241,43 @@ MetaCTF{ericm}
 
 
 ## Easy as it (TCP) Streams (250 pts)
-> Caleb was designing a problem for MetaCTF where the flag would be in the telnet plaintext. Unfortunately, he accidentally stopped the [packet capture](https://metaproblems.com/46dc63e7dbfa1ca757a459063dff0959/easy_as_it_streams.pcapng) right before the flag was supposed to be revealed. Can you still find the flag? Note: You'll need to decrypt in CyberChef rather than using a command line utility. 
+> Caleb was designing a problem for MetaCTF where the flag would be in the telnet plaintext. Unfortunately, he accidentally stopped the [packet capture](https://metaproblems.com/46dc63e7dbfa1ca757a459063dff0959/easy_as_it_streams.pcapng) right before the flag was supposed to be revealed. Can you still find the flag? Note: You'll need to decrypt in CyberChef rather than using a command line utility.
+
+We're given a pcap file, so lets first take a look at the different packets. Immediately we see 3 different streams:
+
+![pcap](https://i.imgur.com/KrGeW7T.png)
+
+Lets follow the first TCP stream:
+
+![pcap](https://i.imgur.com/aRy3knh.png)
+
+Looks like a PGP message, so we now know to look for a private key and a private key passphrase. Lets check the next TCP stream:
+
+![pcap](https://i.imgur.com/QShqmZ9.png)
+
+Looks like the private key, now we need to find the private key passphrase. Lets take a look at the telnet stream:
+
+![pcap](https://i.imgur.com/Qn1DNiW.png)
+
+Interesting, lets filter by client data:
+
+![pcap](https://i.imgur.com/aRlxQuQ.png)
+
+We can see they executed `gpgp --batch --yes --passphrase farnha message.pgp`. From here we can clearly see the passphrase is `farnha`.
+
+Lets dump it into [Cyberchef](https://cyberchef.org/):
+
+![cyberchef](https://i.imgur.com/E6rCQoy.png)
+
+Bit of random text, but Cyberchef recommends we run `gunzip` on the output, doing so we get the flag:
+
+![cyberchef](https://i.imgur.com/epjA45y.png)
 
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{cleartext_private_pgp_keys}
 ```
 [return to top](#top)</div>
 
