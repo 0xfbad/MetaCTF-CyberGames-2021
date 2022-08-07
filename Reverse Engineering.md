@@ -1,5 +1,5 @@
 # Reverse Engineering - 6 challenges
-[There Are No Strings on Me (100 pts)](#there-are-no-strings-on-me-100-pts) *no soln*<br>
+[There Are No Strings on Me (100 pts)](#there-are-no-strings-on-me-100-pts)<br>
 [I Hate Python (250 pts)](#i-hate-python-250-pts) *no soln*<br>
 [Far From The Weakest Shell (275 pts)](#far-from-the-weakest-shell-275-pts) *no soln*<br>
 [Source Code Shipping (275 pts)](#source-code-shipping-275-pts) *no soln*<br>
@@ -11,11 +11,31 @@
 > 
 > [download](https://metaproblems.com/23f23b3689656ad9c3c4371e146b1614/strings)
 
+We're given a file, lets see what it is:
+
+```
+$ file strings
+strings: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=c856b589ad9523c06ced34e6e396f65a70d54bd1, for GNU/Linux 3.2.0, not stripped
+```
+
+Seems easy enough lets run the command `string` to see all strings within the binary:
+
+```
+$ strings strings
+...
+MetaCTF{this_is_the_most_secure_ever}
+Input the password:
+Yay! Here's your flag: %s
+Begone!!
+```
+
+And like that we find the flag!
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{this_is_the_most_secure_ever}
 ```
 [return to top](#top)</div>
 
