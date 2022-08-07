@@ -6,7 +6,7 @@
 [Still Believe in Magic? (150 pts)](#still-believe-in-magic-150-pts)<br>
 [Et tu, Hacker? (200 pts)](#et-tu-hacker-200-pts)<br>
 [Easy as it (TCP) Streams (250 pts)](#easy-as-it-tcp-streams-250-pts)<br>
-[Pattern of Life (275 pts)](#pattern-of-life-275-pts) *no soln*<br>
+[Pattern of Life (275 pts)](#pattern-of-life-275-pts)<br>
 [The Carver (475 pts)](#the-carver-475-pts) *no soln*<br>
 
 ## Magic in the Hex (100 pts)
@@ -287,11 +287,21 @@ MetaCTF{cleartext_private_pgp_keys}
 > 
 > Today you just received [a packet capture (pcap)](https://static.metaproblems.com/2a641db1c19526efb7e0c99004ccba0d/pattern_of_life.pcapng) from a user's workstation. We think that an attacker may have compromised the user's machine and that the computer is beaconing out to their command and control (C2) server. Based on some other logs, we also think the attacker was *not* using a fully encrypted protocol and also did not put much care into making their C2 server look like a normal website. Your task? We'd like you to submit the port number that the C2 server is listening on in the form of `MetaCTF{portnumber}` as the flag.
 
+Given a hint that the attacker is making their C2 server look like a normal website, we can filter by `http` packets:
+
+![pcap](https://i.imgur.com/U2Qvv1I.png)
+
+As we can see, there are quite a few HTTP packet streams, lets look at each one. I was able to find this weird sequence in a stream:
+
+![pcap](https://i.imgur.com/ug9kfjl.png)
+
+Looks like they're connecting to `52.44.115.131:8080` a lot, so it must be the C2 server. Just like that we get the port `8080`.
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{8080}
 ```
 [return to top](#top)</div>
 
