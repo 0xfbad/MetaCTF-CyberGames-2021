@@ -2,7 +2,7 @@
 [A to Z (100 pts)](#a-to-z-100-pts)<br>
 [Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts)<br>
 [Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts)<br>
-[Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts) *no soln*<br>
+[Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts)<br>
 [Size Matters (175 pts)](#size-matters-175-pts) *no soln*<br>
 [Company Picnic (225 pts)](#company-picnic-225-pts) *no soln*<br>
 [Ransomware Patch (250 pts)](#ransomware-patch-250-pts) *no soln*<br>
@@ -81,11 +81,48 @@ babyloka13
 > 
 > Ciphertext 2: `41d9806ec1b55c78258703be87ac9e06edb7369133b1d67ac0960d8632cfb7f2e7974e0ff3c536c1871b`
 
+We can write a python script to crack the one time pad:
+
+```py
+# Initial problem
+cipher1 = "4fd098298db95b7f1bc205b0a6d8ac15f1f821d72fbfa979d1c2148a24feaafdee8d3108e8ce29c3ce1291"
+plaintext1 = "hey let's rob the bank at midnight tonight!"
+
+cipher2 = "41d9806ec1b55c78258703be87ac9e06edb7369133b1d67ac0960d8632cfb7f2e7974e0ff3c536c1871b"
+plaintext2 = ""
+
+
+# Get bytes from cipher
+cipher1 = [int(cipher1[i:i+2], 16) for i in range(0, len(cipher1), 2)]
+cipher2 = [int(cipher2[i:i+2], 16) for i in range(0, len(cipher2), 2)]
+
+# Convert plaintext to unicode
+plaintext1 = [ord(char) for char in plaintext1]
+
+
+# Get key from cipher1
+key = [cipher1[byte] ^ plaintext1[byte] for byte in range(len(cipher1))] # xor cipher1 with plaintext1
+
+# Using key, get plaintext2
+plaintext2 = [key[byte] ^ cipher2[byte] for byte in range(len(cipher2))] # xor cipher2 with key
+
+
+
+print("".join([chr(char) for char in plaintext2]))
+```
+
+Lets run it:
+
+```
+$ python solver.py
+flag is MetaCTF{you're_better_than_steve!}
+```
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{you're_better_than_steve!}
 ```
 [return to top](#top)</div>
 
