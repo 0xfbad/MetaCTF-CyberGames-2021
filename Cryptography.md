@@ -1,7 +1,7 @@
 # Cryptography - 10 challenges
 [A to Z (100 pts)](#a-to-z-100-pts)<br>
 [Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts)<br>
-[Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts) *no soln*<br>
+[Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts)<br>
 [Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts) *no soln*<br>
 [Size Matters (175 pts)](#size-matters-175-pts) *no soln*<br>
 [Company Picnic (225 pts)](#company-picnic-225-pts) *no soln*<br>
@@ -57,11 +57,17 @@ MetaCTF{encoding_is_N0T_the_same_as_encryption!!}
 ## Wrong Way on a One Way Street (100 pts)
 > Hashing is a system by which information is encrypted such that it can never be decrypted... theoretically. Websites will often hash passwords so that if their passwords are ever leaked, bad actors won't actually learn the user's password; they'll just get an encrypted form of it. However, the same password will always hash to the same ciphertext, so if the attacker can guess your password, they can figure out the hash. Can you guess the password for this hash? `cb78e77e659c1648416cf5ac43fca4b65eeaefe1`
 
+Since hashes are one way, you can either brute force them (hashing random strings and comparing them to the known hash) or you can search online databases for the hash. We'll do the latter:
+
+Submitting the hash, we get:
+
+![Hash](https://i.imgur.com/AeegSlW.png)
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+babyloka13
 ```
 [return to top](#top)</div>
 
