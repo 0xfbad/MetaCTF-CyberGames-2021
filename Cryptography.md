@@ -1,6 +1,6 @@
 # Cryptography - 10 challenges
 [A to Z (100 pts)](#a-to-z-100-pts)<br>
-[Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts) *no soln*<br>
+[Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts)<br>
 [Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts) *no soln*<br>
 [Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts) *no soln*<br>
 [Size Matters (175 pts)](#size-matters-175-pts) *no soln*<br>
@@ -41,11 +41,15 @@ bashful_is_my_fav_dwarf
 > 
 > See if you’re able to recover the Administrator's password.
 
+The `==` hints at base64 padding, lets dump it into Cyberchef and add a base64 decode operation:
+
+![Cyberchef](https://i.imgur.com/KeCotWB.png)
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+MetaCTF{encoding_is_N0T_the_same_as_encryption!!}
 ```
 [return to top](#top)</div>
 
