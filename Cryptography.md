@@ -1,5 +1,5 @@
 # Cryptography - 10 challenges
-[A to Z (100 pts)](#a-to-z-100-pts) *no soln*<br>
+[A to Z (100 pts)](#a-to-z-100-pts)<br>
 [Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts) *no soln*<br>
 [Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts) *no soln*<br>
 [Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts) *no soln*<br>
@@ -15,11 +15,19 @@
 > 
 > `yzhsufo_rh_nb_uze_wdziu`
 
+Dump it into Cyberchef and add a substitution cipher operation, substituting `A-Z` with 'Z-A':
+
+![Cyberchef](https://i.imgur.com/FdQo4m1.png)
+
+Or alternatively you can use an Atbash cipher:
+
+![Cyberchef](https://i.imgur.com/LjVZsr8.png)
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+bashful_is_my_fav_dwarf
 ```
 [return to top](#top)</div>
 
