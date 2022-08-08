@@ -3,7 +3,7 @@
 [Thnks fr th Pwds (100 pts)](#thnks-fr-th-pwds-100-pts)<br>
 [Wrong Way on a One Way Street (100 pts)](#wrong-way-on-a-one-way-street-100-pts)<br>
 [Unbreakable Encryption (150 pts)](#unbreakable-encryption-150-pts)<br>
-[Size Matters (175 pts)](#size-matters-175-pts) *no soln*<br>
+[Size Matters (175 pts)](#size-matters-175-pts)<br>
 [Company Picnic (225 pts)](#company-picnic-225-pts) *no soln*<br>
 [Ransomware Patch (250 pts)](#ransomware-patch-250-pts) *no soln*<br>
 [Sugar, Spice, and Sweet1986Spice (425 pts)](#sugar-spice-and-sweet1986spice-425-pts) *no soln*<br>
@@ -134,11 +134,53 @@ MetaCTF{you're_better_than_steve!}
 > e: `257`
 > n: `0x592f144c0aeac50bdf57cf6a6a6e135`
 
+There's a few ways to approach this problem, the first is just using an online tool like [dcode.fr](https://www.dcode.fr/rsa-cipher):
+
+![dcode](https://i.imgur.com/TDEXtQ6.png)
+
+Or we can make a quick python script to decode the message:
+
+```py
+from Cryptodome.Util.number import long_to_bytes, inverse
+
+# Initial problem
+cipherMessage = 0x2526512a4abf23fca755defc497b9ab
+e = 257
+n = 0x592f144c0aeac50bdf57cf6a6a6e135
+
+
+# Get factors of n (used factordb.com because factorization at this scale takes forever)
+p = 430535396861370041
+q = 17209058493553260637
+
+# Get phi, the totient of n (basically the number of numbers coprime to n)
+phi = (p - 1) * (q - 1)
+
+# Get d, the private key (inverse of e mod phi)
+privateKey = inverse(e, phi)
+
+# Get plaintext (creates long int from ciphertext)
+plaintext = pow(cipherMessage, privateKey, n)
+
+# Convert long int to byte string
+plaintext = long_to_bytes(plaintext)
+
+
+print(plaintext.decode('utf-8'))
+```
+
+Lets run it:
+
+```
+$ python solver.py
+you_broke_rsa!
+```
+
 <div align="center">
 
 Flag:
 ```
-NOT SOLVED YET
+you_broke_rsa!
 ```
 [return to top](#top)</div>
 
